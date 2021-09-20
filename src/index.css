@@ -97,6 +97,11 @@ p {
     border: 2px solid var(--main-color);
     margin-bottom: 20px;
     background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.tech-descr-content {
+    width: 100%;
 }
 
 hr {
@@ -257,11 +262,11 @@ p.back {
         transition-duration: 2s;
     }
 
-    div.tech-descr:hover div.progress-bar {
-        width: 30%;
-        color: black;
-        padding-right: 5px;
-    }
+    /*div.tech-descr:hover div.progress-bar {*/
+    /*    width: 30%;*/
+    /*    color: black;*/
+    /*    padding-right: 5px;*/
+    /*}*/
 
     .photo-gallery {
         text-align: center;
