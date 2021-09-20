@@ -1,31 +1,16 @@
 import Technology from "./Technology";
-import {useState} from "react";
+import { useState, useEffect} from "react";
 
 const Technologies = () => {
-    const [technologies, setTechnologies] = useState([
-        {
-            id: 1,
-            name: "C",
-            description: "Whatever, let's test it for now",
-            skill: 30,
-            imgUrl: "c.png"
-        },
-        {
-            id: 2,
-            name: "C++",
-            description: "Whatever, let's test it for now",
-            skill: 40,
-            imgUrl: "cpp.png"
-        },
-        {
-            id: 3,
-            name: "C#",
-            description: "Whatever, let's test it for now",
-            skill: 20,
-            imgUrl: "csh.png"
-        },
-    ]);
-    
+    const [technologies, setTechnologies] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/technology/all')
+            .then(response => response.json())
+            .then(data => setTechnologies(JSON.parse(data)));
+
+    }, []);
+
     return (
         <>
             <h1>Technologies I worked with</h1>
