@@ -1,13 +1,339 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* For now I'll keep all the styling in one file */
+/* Home */
+
+:root {
+    --main-color: #7ee8fa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    background: url(./img/water.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll-bar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.header {
+    width: 100vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
+    border-bottom: 1px solid var(--main-color);
+    z-index: 1;
+}
+
+.navbar {
+    width: 30vw;
+    margin: auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li a {
+    display: block;
+    color: var(--main-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #7ee7fa19;
+}
+
+li a:hover:not(.active) {
+    background-color: #7ee7fa19;
+}
+
+.active,
+.fullBlog-active {
+    font-weight: bolder;
+    border-bottom: 2px solid var(--main-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    color: var(--main-color);
+}
+
+.content {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 20px);
+}
+
+.tech-descr {
+    width: 100%;
+    border: 2px solid var(--main-color);
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+hr {
+    margin-left: 0;
+    margin-right: 0;
+    border-top: 2px solid var(--main-color);
+}
+
+#jfx {
+    color: orangered;
+}
+
+#contact-me {
+    padding-top: 10px;
+}
+
+div.tech-descr img {
+    max-height: 190px;
+    max-width: 180px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+div.tech-descr h4 {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: auto;
+}
+
+div.contact {
+    padding: 5px;
+}
+
+div.contact:hover {
+    background-color: #7ee7fa19;
+    cursor: pointer;
+}
+
+#back-link {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+}
+
+a#back-link:hover {
+    color: #96f550;
+}
+
+p.back {
+    text-align: center;
+}
+
+.progress-bar-container {
+    display: none;
+}
+
+.progress-bar {
+    display: none;
+}
+
+.photo-gallery {
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.photo-gallery-img {
+    padding: 10px;
+    max-width: 90%;
+    margin: auto;
+}
+
+@media screen and (min-width: 640px) {
+    .header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    .navbar {
+        width: 70vw;
+    }
+
+    li {
+        float: left;
+        display: inline;
+    }
+
+    li a {
+        font-size: larger;
+    }
+
+    .active {
+        background-image: linear-gradient(to top, #7ee7fa78, #7ee7fa00);
+    }
+
+    .content {
+        width: 70vw;
+        text-align: justify;
+    }
+
+    .tech-descr {
+        display: flex;
+    }
+
+    .div-sep {
+        padding: 5px;
+    }
+
+    .contact-container {
+        width: 90%;
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        position: relative;
+    }
+
+    .contact {
+        margin: auto;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+    .footer {
+        text-align: center;
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar-container {
+        display: block;
+        height: 24px;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 80%;
+        border: 1px solid var(--main-color);
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .progress-bar {
+        box-sizing: border-box;
+        display: block;
+        height: 24px;
+        width: 0;
+        text-align: right;
+        padding-right: 0px;
+        color: transparent;
+        background-image: linear-gradient(to right, #7ee7fa99, #7ee7faff);
+        transition-propety: width, color, padding-right;
+        transition-duration: 2s;
+    }
+
+    div.tech-descr:hover div.progress-bar {
+        width: 30%;
+        color: black;
+        padding-right: 5px;
+    }
+
+    .photo-gallery {
+        text-align: center;
+        position: relative;
+        width: 100%;
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+    }
+}
+
+/* Projects and Blog */
+
+.project-descr,
+.blog-descr {
+    border: 2px solid var(--main-color);
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+div.project-descr a,
+div.blog-descr a {
+    display: inline-block;
+    color: var(--main-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+
+div.project-descr a:hover,
+div.blog-descr a:hover {
+    color: #96f550;
+}
+
+.project-descr-inner,
+.blog-descr-inner {
+    width: 90%;
+    margin: auto;
+}
+
+div.project-descr-inner h4 {
+    word-spacing: 10px;
+}
+
+/* Blog */
+/* Blog is using some of the Projects css */
+
+div.blog-content h3 {
+    background-image: linear-gradient(var(--main-color), rgba(245, 222, 179, 0));
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.blog-descr {
+    position: relative;
+}
+
+.blog-read-more {
+    position: absolute;
+    bottom: 5px;
+    left: calc(50% - 15vw);
+    text-align: center;
+    width: 30vw;
+}
+
+div.blog-read-more a {
+    font-size: larger;
+    font-weight: bold;
+    display: inline-block;
 }
