@@ -21,7 +21,7 @@ const Project = ( { data } ) => {
                 <h3>Technologies used</h3>
                 <h4>{data.technologies}</h4>
                 <hr />
-                <a href={data.githubLink} target="_blank">Check it out on GitHub</a>
+                <a href={data.githubLink} target="_blank" rel="noreferrer">Check it out on GitHub</a>
             </div>
         </div>
     );
