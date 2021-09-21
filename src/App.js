@@ -4,7 +4,7 @@ import Skills from "./components/Skills";
 import Technologies from "./components/Technologies";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
-import Blog from "./components/Blog";
+import Blogs from "./components/Blogs";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -25,7 +25,7 @@ function App() {
 
             <Route path="/projects" component={Projects} />
 
-            <Route path="/blog" component={Blog} />
+            <Route path="/blog" component={Blogs} />
 
             <Footer />
           </div>
