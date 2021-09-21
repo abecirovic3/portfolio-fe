@@ -1,22 +1,36 @@
 import Contact from "./Contact";
+import { useState, useEffect} from "react";
+import NetworkError from "./NetworkError";
 
 const Footer = () => {
+    const [contactInfo, setContactInfo] = useState([]);
+    const [networkError, setNetworkError] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/contact/all')
+            .then(response => {
+                if (!response.ok)
+                    throw new Error("An error occurred while fetching the data");
+                return response.json();
+            })
+            .then(data => setContactInfo(JSON.parse(data)))
+            .catch(err => {
+                setNetworkError(true);
+            });
+
+    }, []);
+
     return (
         <div id="footer" className="footer">
             <h1 id="contact-me">Contact me</h1>
-            <h3>Feel free to contact me, I'm currently looking for job or intership opportunities</h3>
-
-            {/*we shall loop through all the contact info blocks which we fetch from the be */}
-            {/*but for now let's make it static*/}
-            <div className={"contact-container"}>
-                <Contact data={
-                    {
-                        tag: "+387 61/039-208",
-                        url: "",
-                        imgUrl: "telephone.png"
-                    }
-                }/>
-            </div>
+            <h3>Feel free to contact me, I'm currently looking for job or internship opportunities</h3>
+            { networkError ? <NetworkError contactInfo="ajdinrs.becirovic@gmail.com" /> :
+                <div className={"contact-container"}>
+                    {contactInfo.map((contact) => (
+                        <Contact key={contact.id} data={contact} />
+                    ))}
+                </div>
+            }
         </div>
     );
 }

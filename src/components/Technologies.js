@@ -1,5 +1,6 @@
 import Technology from "./Technology";
 import { useState, useEffect} from "react";
+import NetworkError from "./NetworkError";
 
 const Technologies = () => {
     const [technologies, setTechnologies] = useState([]);
@@ -24,7 +25,7 @@ const Technologies = () => {
             <h1>Technologies I worked with</h1>
             <h3>With listing all of these technologies I just want to say that I have a basic understanding of all of them,
                 and that I'm open to working with any and getting more skilled at them when needed.</h3>
-            { networkError ? <h3>Network error occurred, couldn't load technologies :(</h3> :
+            { networkError ? <NetworkError contactInfo="ajdinrs.becirovic@gmail.com" /> :
             technologies.map((technology) => (
                 <Technology key={technology.id} data={technology}/>
             ))}
