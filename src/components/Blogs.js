@@ -25,7 +25,7 @@ const Blogs = () => {
             <h1>Blog</h1>
             { networkError ? <NetworkError contactInfo="ajdinrs.becirovic@gmail.com" /> :
                 blogs.map((blog) => (
-                    <Blog key={blog.id} data={blog}/>
+                    <Blog key={blog.id} data={blog} />
                 ))}
         </>
     );

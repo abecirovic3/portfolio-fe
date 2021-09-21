@@ -297,8 +297,7 @@ p.back {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-div.project-descr a,
-div.blog-descr a {
+div.project-descr a {
     display: inline-block;
     color: var(--main-color);
     padding-top: 10px;
@@ -307,7 +306,7 @@ div.blog-descr a {
 }
 
 div.project-descr a:hover,
-div.blog-descr a:hover {
+div.blog-descr p:hover {
     color: #96f550;
 }
 
@@ -334,20 +333,32 @@ div.blog-content h3 {
     -moz-text-fill-color: transparent;
 }
 
+div.blog-content-exp h3 {
+    color: var(--main-color);
+}
+
 .blog-descr {
     position: relative;
 }
 
 .blog-read-more {
     position: absolute;
-    bottom: 5px;
+    bottom: 0;
     left: calc(50% - 15vw);
     text-align: center;
     width: 30vw;
 }
 
-div.blog-read-more a {
+.blog-read-more.exp {
+    position: relative;
+    text-align: center;
+    width: 30vw;
+}
+
+#read-more {
     font-size: larger;
     font-weight: bold;
     display: inline-block;
+    cursor: pointer;
+    margin-bottom: 5px;
 }
