@@ -1,12 +1,16 @@
+import { Link, useLocation } from "react-router-dom";
+
 const Header = () => {
+    const location = useLocation();
+
     return (
         <div className="header">
             <div className="navbar">
                 <ul>
-                    <li className="active"><a href="https://github.com/abecirovic3/portfolio-fe">Home</a></li>
-                    <li><a href="https://github.com/abecirovic3/portfolio-fe">Projects</a></li>
-                    <li><a href="#https://github.com/abecirovic3/portfolio-fe">Blog</a></li>
-                    <li><a href="https://github.com/abecirovic3/portfolio-fe">Contact</a></li>
+                    <li className={location.pathname === "/" && "active"}><Link to="/">Home</Link></li>
+                    <li className={location.pathname === "/projects" && "active"}><Link to="/projects">Projects</Link></li>
+                    <li className={location.pathname === "/blog" && "active"}><Link to="/blog">Blog</Link></li>
+                    <li className={location.pathname === "/contact" && "active"}><Link to="/contact">Contact</Link></li>
                 </ul>
             </div>
         </div>

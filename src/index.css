@@ -133,7 +133,7 @@ div.tech-descr h4 {
 
 .footer {
     background-color: rgba(0, 0, 0, 0.6);
-    margin-top: auto;
+    /*margin-top: auto;*/
 }
 
 div.contact,
