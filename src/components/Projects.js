@@ -1,14 +1,14 @@
 import NetworkError from "./NetworkError";
 import Project from "./Project";
-
 import { useState, useEffect } from "react";
+import APIRoute from "./APIRoute";
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [networkError, setNetworkError] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/project/all')
+        fetch(`${APIRoute}/project/all`)
             .then(response => {
                 if (!response.ok)
                     throw new Error("An error occurred while fetching the data");

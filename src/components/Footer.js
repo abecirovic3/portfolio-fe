@@ -2,6 +2,7 @@ import Contact from "./Contact";
 import { useState, useEffect} from "react";
 import NetworkError from "./NetworkError";
 import { useLocation} from "react-router-dom";
+import APIRoute from "./APIRoute";
 
 const Footer = () => {
     const [contactInfo, setContactInfo] = useState([]);
@@ -11,7 +12,7 @@ const Footer = () => {
     const marginTop = location.pathname === "/contact" ? "20px" : "auto";
 
     useEffect(() => {
-        fetch('http://localhost:5000/contact/all')
+        fetch(`${APIRoute}/contact/all`)
             .then(response => {
                 if (!response.ok)
                     throw new Error("An error occurred while fetching the data");

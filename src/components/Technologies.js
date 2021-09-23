@@ -1,13 +1,14 @@
 import Technology from "./Technology";
 import { useState, useEffect} from "react";
 import NetworkError from "./NetworkError";
+import APIRoute from "./APIRoute";
 
 const Technologies = () => {
     const [technologies, setTechnologies] = useState([]);
     const [networkError, setNetworkError] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/technology/all')
+        fetch(`${APIRoute}/technology/all`)
             .then(response => {
                 if (!response.ok)
                     throw new Error("An error occurred while fetching the data");

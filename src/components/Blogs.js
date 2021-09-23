@@ -1,13 +1,14 @@
 import Blog from "./Blog";
 import { useState, useEffect} from "react";
 import NetworkError from "./NetworkError";
+import APIRoute from "./APIRoute";
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [networkError, setNetworkError] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blog/all')
+        fetch(`${APIRoute}/blog/all`)
             .then(response => {
                 if (!response.ok)
                     throw new Error("An error occurred while fetching the data");

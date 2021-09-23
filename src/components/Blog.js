@@ -1,5 +1,6 @@
 import ImageGallery from "./ImageGallery";
 import { useState } from "react";
+import APIRoute from "./APIRoute";
 
 const Blog = ( { data } ) => {
     const [blogExpanded, setBlogExpanded] = useState(false);
@@ -11,7 +12,7 @@ const Blog = ( { data } ) => {
     }
 
     const fetchBlogImages = () => {
-        fetch(`http://localhost:5000/blog/images/all?blogId=${data.id}`)
+        fetch(`${APIRoute}/blog/images/all?blogId=${data.id}`)
             .then(response => {
                 if (!response.ok)
                     throw new Error("An error occurred while fetching the data");
