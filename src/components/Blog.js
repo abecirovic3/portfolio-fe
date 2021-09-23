@@ -24,6 +24,10 @@ const Blog = ( { data } ) => {
             });
     }
 
+    let readMoreBreakPoint = 400;
+    if (data.content.length < 500)
+        readMoreBreakPoint = Math.floor(data.content.length * 0.75)
+
     return (
         <div className="blog-descr">
             <div className="blog-descr-inner">
@@ -31,7 +35,7 @@ const Blog = ( { data } ) => {
                 <hr />
                 <div className={blogExpanded ? "blog-content-exp" : "blog-content"}>
                     <h3>{blogExpanded ? data.content
-                        : data.content.substring(0, Math.floor(data.content.length * 0.75))}</h3>
+                        : data.content.substring(0, readMoreBreakPoint)}</h3>
                 </div>
 
                 {blogExpanded && <ImageGallery images={blogImages} />}
