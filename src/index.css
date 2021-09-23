@@ -270,12 +270,6 @@ p.back {
         transition-duration: 2s;
     }
 
-    /*div.tech-descr:hover div.progress-bar {*/
-    /*    width: 30%;*/
-    /*    color: black;*/
-    /*    padding-right: 5px;*/
-    /*}*/
-
     .photo-gallery {
         text-align: center;
         position: relative;
@@ -284,6 +278,10 @@ p.back {
         margin: auto;
         flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
+    }
+
+    div.blog-content-exp h3 {
+        text-align: justify;
     }
 }
 
