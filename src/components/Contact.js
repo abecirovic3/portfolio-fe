@@ -5,7 +5,10 @@ const Contact = ( { data } ) => {
     };
 
     try {
-        logo = require(`../img/icons/${data.imgUrl}`);
+        if (data.imgUrl.includes("http"))
+            logo.default = data.imgUrl;
+        else
+            logo = require(`../img/icons/${data.imgUrl}`);
     } catch (e) {
         console.log(e);
     }
@@ -15,7 +18,7 @@ const Contact = ( { data } ) => {
             if (data.url)
                 window.open(data.url, '_blank');
         }}>
-            <img className="div-sep" src={logo.default} alt={data.imgUrl} />
+            <img className="div-sep" src={logo.default} alt={"logo"} />
             <p className="div-sep">{data.tag}</p>
         </div>
     );

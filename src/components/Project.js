@@ -1,11 +1,14 @@
 const Project = ( { data } ) => {
 
-    let img = {
+    let logo = {
         default: "img"
     };
 
     try {
-        img = require(`../img/project-logos/${data.imgUrl}`);
+        if (data.imgUrl.includes("http"))
+            logo.default = data.imgUrl;
+        else
+            logo = require(`../img/project-logos/${data.imgUrl}`);
     } catch (e) {
         console.log(e);
     }
@@ -15,7 +18,7 @@ const Project = ( { data } ) => {
             <div className="project-descr-inner">
                 <h2>{data.name}</h2>
                 <hr />
-                <img src={img.default} alt={data.imgUrl} />
+                <img src={logo.default} alt={"logo"} />
                 <h3>{data.description}</h3>
                 <hr />
                 <h3>Technologies used</h3>

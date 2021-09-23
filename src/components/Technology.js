@@ -2,12 +2,15 @@ import { useState} from "react";
 
 const Technology = ( { data } ) => {
 
-    let img = {
+    let logo = {
         default: "img"
     };
 
     try {
-        img = require(`../img/logos/${data.imgUrl}`);
+        if (data.imgUrl.includes("http"))
+            logo.default = data.imgUrl;
+        else
+            logo = require(`../img/logos/${data.imgUrl}`);
     } catch (e) {
         console.log(e);
     }
@@ -28,7 +31,7 @@ const Technology = ( { data } ) => {
                 width: "0"
             });
         }}>
-            <img className="div-sep" src={img.default} alt={data.imgUrl} />
+            <img className="div-sep" src={logo.default} alt={"logo"} />
                 <div className="tech-descr-content">
                     <h4 className="div-sep">{data.description}</h4>
                     <h4 className="div-sep">Skill level:
