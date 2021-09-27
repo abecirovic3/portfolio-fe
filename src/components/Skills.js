@@ -1,27 +1,8 @@
-import { useState, useEffect } from "react";
-import APIRoute from "./APIRoute";
-
-const Skills = () => {
-    const [skills, setSkills] = useState([]);
-    const [networkError, setNetworkError] = useState(false);
-
-    useEffect(() => {
-        fetch(`${APIRoute}/skill/all`)
-            .then(response => {
-                if (!response.ok)
-                    throw new Error("An error occurred while fetching the data");
-                return response.json();
-            })
-            .then(data => setSkills(JSON.parse(data)))
-            .catch(err => {
-                setNetworkError(true);
-            });
-
-    }, []);
+const Skills = ({ skills }) => {
     return (
         <>
             <h1>Skills</h1>
-            {networkError ?
+            {skills.length === 0 ?
             <div>
                 <h3>Most of my time at collage I worked with C++ and Java, but I'm comfortable with many other technologies</h3>
                 <h3>I am familiar with Git and Github</h3>

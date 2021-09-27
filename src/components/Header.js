@@ -11,7 +11,7 @@ const Header = () => {
                     <li className={location.pathname === "/projects" ? "active" : ""}><Link to="/projects">Projects</Link></li>
                     <li className={location.pathname === "/blog" ? "active" : ""}><Link to="/blog">Blog</Link></li>
                     <li className={location.pathname === "/contact" ? "active" : ""}><Link to="/contact">Contact</Link></li>
-                    <li className="right"><a href="https://github.com/abecirovic3/portfolio-fe" target="_blank">&lt;/&gt;</a></li>
+                    <li className="right"><a href="https://github.com/abecirovic3/portfolio-fe" target="_blank" rel="noreferrer">&lt;/&gt;</a></li>
                 </ul>
             </div>
         </div>
