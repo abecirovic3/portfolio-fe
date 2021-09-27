@@ -33,11 +33,11 @@ const Technology = ( { data } ) => {
         }}>
             <img className="div-sep" src={logo.default} alt={"logo"} />
                 <div className="tech-descr-content">
-                    <h4 className="div-sep">{data.description}</h4>
-                    <h4 className="div-sep">Skill level:
+                    <h3 id="tech-descr-text" className="div-sep">{data.description}</h3>
+                    <h4 id="tech-descr-text" className="div-sep">Skill level:
                         {data.skill < 40 ? " LOW" : data.skill < 80 ? " MEDIUM" : " HIGH"}</h4>
-                    <div className="progress-bar-container">
-                        <div style={skillBarStyle} className="progress-bar">{data.skill}%</div>
+                    <div className="skill-bar-container">
+                        <div style={skillBarStyle} className="skill-bar">{data.skill}%</div>
                     </div>
                 </div>
         </div>
