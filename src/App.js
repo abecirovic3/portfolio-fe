@@ -9,25 +9,33 @@ import Blogs from "./components/Blogs";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {useEffect, useState} from "react";
 import APIRoute from "./components/APIRoute";
+import NetworkError from "./components/NetworkError";
 
 function App() {
-    const [aboutMeText, setAboutMeText] = useState([]);
+    const [aboutMeText, setAboutMeText] = useState(
+        {
+            id: 1,
+            title: "aboutme",
+            content: ""
+        }
+    );
     const [skills, setSkills] = useState([]);
     const [technologies, setTechnologies] = useState([]);
     const [projects, setProjects] = useState([]);
     const [blogs, setBlogs] = useState([]);
+    const [networkError, setNetworkError] = useState(false);
 
     useEffect(() => {
         fetch(`${APIRoute}/home/info?title=aboutme`)
             .then(response => {
                 if (!response.ok)
-                    throw new Error("An error occurred while fetching about me data");
+                    throw new Error("An error occurred while fetching the data");
                 return response.json();
             })
             .then(data => setAboutMeText(JSON.parse(data)))
             .catch(err => {
                 console.log(err);
-                setAboutMeText({ content: "static" })
+                setNetworkError(true);
             });
 
         fetch(`${APIRoute}/skill/all`)
@@ -39,6 +47,7 @@ function App() {
             .then(data => setSkills(JSON.parse(data)))
             .catch(err => {
                 console.log(err);
+                setNetworkError(true);
             });
 
         fetch(`${APIRoute}/technology/all`)
@@ -50,6 +59,7 @@ function App() {
             .then(data => setTechnologies(JSON.parse(data)))
             .catch(err => {
                 console.log(err);
+                setNetworkError(true);
             });
 
         fetch(`${APIRoute}/project/all`)
@@ -61,6 +71,7 @@ function App() {
             .then(data => setProjects(JSON.parse(data)))
             .catch(err => {
                 console.log(err);
+                setNetworkError(true);
             });
 
         fetch(`${APIRoute}/blog/all`)
@@ -72,14 +83,16 @@ function App() {
             .then(data => setBlogs(JSON.parse(data)))
             .catch(err => {
                 console.log(err);
+                setNetworkError(true);
             });
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   return (
       <Router>
         <div className="App">
           <Header />
           <div className="content">
+            {networkError && <NetworkError contactInfo="ajdinrs.becirovic@gmial.com" />}
 
             <Route path="/" exact render={(props) => (
                 <>
