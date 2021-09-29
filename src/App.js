@@ -23,6 +23,7 @@ function App() {
     const [technologies, setTechnologies] = useState([]);
     const [projects, setProjects] = useState([]);
     const [blogs, setBlogs] = useState([]);
+    const [contactInfo, setContactInfo] = useState([]);
     const [networkError, setNetworkError] = useState(false);
 
     useEffect(() => {
@@ -85,6 +86,19 @@ function App() {
                 console.log(err);
                 setNetworkError(true);
             });
+
+        fetch(`${APIRoute}/contact/all`)
+            .then(response => {
+                if (!response.ok)
+                    throw new Error("An error occurred while fetching the data");
+                return response.json();
+            })
+            .then(data => setContactInfo(JSON.parse(data)))
+            .catch(err => {
+                console.log(err);
+                setNetworkError(true);
+            });
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   return (
@@ -110,7 +124,7 @@ function App() {
                 <Blogs {...props} blogs={blogs} />
             )} />
 
-            <Footer />
+            <Footer contactInfo={contactInfo}/>
           </div>
         </div>
       </Router>
