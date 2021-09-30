@@ -65,7 +65,8 @@ ul {
     overflow: hidden;
 }
 
-li a {
+li a,
+#project-repo {
     display: block;
     color: var(--main-color);
     text-align: center;
@@ -229,6 +230,10 @@ p.back {
 
     li a {
         font-size: larger;
+    }
+
+    #project-repo-container {
+        display: none;
     }
 
     .active {

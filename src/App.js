@@ -125,6 +125,11 @@ function App() {
             )} />
 
             <Footer contactInfo={contactInfo}/>
+            <div id="project-repo-container">
+                <hr />
+                <h2><a id="project-repo" href="https://github.com/abecirovic3/portfolio-fe" target="_blank" rel="noreferrer">&lt;/&gt;</a></h2>
+                <hr />
+            </div>
           </div>
         </div>
       </Router>
