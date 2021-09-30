@@ -1,6 +1,6 @@
-import { useState} from "react";
+import {useState} from "react";
 
-const Technology = ( { data } ) => {
+const Technology = ( {data} ) => {
 
     let logo = {
         default: "img"

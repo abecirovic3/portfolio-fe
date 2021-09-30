@@ -1,4 +1,4 @@
-const Project = ( { data } ) => {
+const Project = ( {data} ) => {
 
     let logo = {
         default: "img"

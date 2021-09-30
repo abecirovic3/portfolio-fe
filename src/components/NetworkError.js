@@ -1,4 +1,4 @@
-const NetworkError = ( { contactInfo } ) => {
+const NetworkError = ( {contactInfo} ) => {
     return (
         <div className="error-div">
             <h2>An error occurred while fetching page content data</h2>

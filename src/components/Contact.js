@@ -1,4 +1,4 @@
-const Contact = ( { data } ) => {
+const Contact = ({data}) => {
 
     let logo = {
         default: "img"
@@ -18,7 +18,7 @@ const Contact = ( { data } ) => {
             if (data.url)
                 window.open(data.url, '_blank');
         }}>
-            <img className="div-sep" src={logo.default} alt={"logo"} />
+            <img className="div-sep" src={logo.default} alt={"logo"}/>
             <p className="div-sep">{data.tag}</p>
         </div>
     );

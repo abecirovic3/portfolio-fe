@@ -1,8 +1,8 @@
 import ImageGallery from "./ImageGallery";
-import { useState } from "react";
+import {useState} from "react";
 import APIRoute from "./APIRoute";
 
-const Blog = ( { data } ) => {
+const Blog = ({data}) => {
     const [blogExpanded, setBlogExpanded] = useState(false);
     const [blogImages, setBlogImages] = useState([]);
 
@@ -32,13 +32,13 @@ const Blog = ( { data } ) => {
         <div className="blog-descr">
             <div className="blog-descr-inner">
                 <h2>{data.title}</h2>
-                <hr />
+                <hr/>
                 <div className={blogExpanded ? "blog-content-exp" : "blog-content"}>
                     <h3>{blogExpanded ? data.content
                         : data.content.substring(0, readMoreBreakPoint)}</h3>
                 </div>
 
-                {blogExpanded && <ImageGallery images={blogImages} />}
+                {blogExpanded && <ImageGallery images={blogImages}/>}
 
                 <div className={blogExpanded ? "blog-read-more-exp" : "blog-read-more"}>
                     <p id="read-more" onClick={() => toggleBlogContainer()}>
