@@ -1,4 +1,78 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/abecirovic3/portfolio-fe">
+    <img src="ghImages/lego.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Ajdin Becirovic Portfolio</h3>
+
+  <p align="center">
+    This GitHub repo is for my portfolio website, which can be found <a href="https://abecirovic3.herokuapp.com"><strong>HERE</strong></a>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#credits">Credits</a></li>
+    <li><a href="#create-react-app">Create React App</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+![Screenshot](https://github.com/abecirovic3/Jumpy/blob/master/images/jumpyScreen.PNG?raw=true)
+
+I started this project for learning purposes. Some time into it and I figured, why not depoy it. The app communicates with a back-end, which I made with Node.js and all of the presented data is fetched from it. The app consists of three parts, the HOME part in which I introduce myself and list all my skills and technologies I worked with, the PROJECTS part consists of the projects I worked on, which can be found at my GitHub, and the BLOG part, well it explains itself :D.
+
+### Built With
+
+Technologies used:
+* React
+* HTML
+* CSS
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+The app is deployed at Heroku and you can check it out following this <a href="https://abecirovic3.herokuapp.com/">link</a>
+
+
+<!-- CONTACT -->
+## Contact
+
+Ajdin Becirovic - [@Ajdin Becirovic](https://www.facebook.com/ajdin.becirovic.1/) - abecirovic3@etf.unsa.ba
+
+Project Link: [https://github.com/abecirovic3/portfolio-fe](https://github.com/abecirovic3/portfolio-fe)
+
+
+
+<!-- Credits -->
+## Credits
+* [Logo image](https://www.flaticon.com/free-icon/lego_1674397?term=lego&page=1&position=5&page=1&position=5&related_id=1674397&origin=search)
+* [Readme template](https://github.com/othneildrew/Best-README-Template)
+
+
+<!-- React -->
+## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
