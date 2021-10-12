@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/abecirovic3/portfolio-fe">
-    <img src="ghImages/lego.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn-icons-png.flaticon.com/512/1674/1674397.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Ajdin Becirovic Portfolio</h3>
@@ -36,8 +36,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-![Screenshot](https://github.com/abecirovic3/Jumpy/blob/master/images/jumpyScreen.PNG?raw=true)
 
 I started this project for learning purposes. Some time into it and I figured, why not depoy it. The app communicates with a back-end, which I made with Node.js and all of the presented data is fetched from it. The app consists of three parts, the HOME part in which I introduce myself and list all my skills and technologies I worked with, the PROJECTS part consists of the projects I worked on, which can be found at my GitHub, and the BLOG part, well it explains itself :D.
 
