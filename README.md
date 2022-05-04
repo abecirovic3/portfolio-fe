@@ -23,9 +23,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#credits">Credits</a></li>
     <li><a href="#create-react-app">Create React App</a></li>
@@ -45,14 +42,6 @@ Technologies used:
 * React
 * HTML
 * CSS
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-The app is deployed at Heroku and you can check it out following this <a href="https://abecirovic3.herokuapp.com/">link</a>
-
 
 <!-- CONTACT -->
 ## Contact
