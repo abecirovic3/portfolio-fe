@@ -8,7 +8,7 @@
   <h3 align="center">Ajdin Becirovic Portfolio</h3>
 
   <p align="center">
-    This GitHub repo is for my portfolio website, which can be found <a href="https://abecirovic3.herokuapp.com"><strong>HERE</strong></a>
+    This GitHub repo is for my portfolio website
 </p>
 
 
